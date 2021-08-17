@@ -23,6 +23,22 @@ def create_table():
 def home():
     return render_template("index.html")
 
+@app.route('/targets', methods=['GET'])
+def targets():
+    return render_template("targets.html")
+
+@app.route('/models', methods=['GET'])
+def models():
+    return render_template("models.html")
+
+@app.route('/contact', methods=['GET'])
+def contact():
+    return render_template("contact.html")
+
+@app.route('/impressum', methods=['GET'])
+def impressum():
+    return render_template("impressum.html")
+
 
 
 
