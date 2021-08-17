@@ -1,3 +1,28 @@
 html {
-	background-color: #FEDEDE;
+	background-color: white;
+}
+body{
+	margin: 0;
+}
+
+.header-nav {
+	width: 100%;
+	height: auto;
+	padding: 30px;
+	background-color: #FF9800;
+	top: 0px;
+	text-align: center;
+	font-size: 3rem;
+
+}
+
+.header-nav > .conatiner {
+}
+
+
+.header-nav > span {
+	display: inline-block;
+	float: right;
+	padding: 10px;
+
 }
