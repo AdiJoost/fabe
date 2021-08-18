@@ -20,6 +20,20 @@ body{
 .header-nav > .conatiner {
 }
 
+.introBox {
+	position: relative;
+	text-align: center;
+	padding:0 10% 0 10%;
+}
+
+.introBox > h1 {
+	font-size: 3rem;
+}
+
+.introBox > p {
+	font-size: 2rem;
+}
+
 
 .header-nav > span {
 	display: inline-block;
@@ -27,6 +41,19 @@ body{
 	padding: 10px;
 	color: #FFF;
 
+
+}
+
+.notification {
+	background-color: #0067ff;
+	color: #FFF;
+	padding: 2em;
+	border-radius: 10px;
+}
+
+.notification > a {
+	color: #FFF;
+	text-decoration: underline;
 }
 
 .header-nav > .container > span > a {
