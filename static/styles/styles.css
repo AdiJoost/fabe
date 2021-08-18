@@ -62,7 +62,7 @@ body{
 
 .header-nav > .container > span > a:link{
 	text-decoration: none;
-	color: #AAA !important;
+	color: #FFF !important;
 }
 
 .header-nav > .container > span > a:hover{
@@ -72,7 +72,7 @@ body{
 
 .header-nav > .container > span > a:visted{
 	text-decoration: none;
-	color: #AAA !important;
+	color: #FFF !important;
 }
 
 .header-nav > .container > span > a:active{
