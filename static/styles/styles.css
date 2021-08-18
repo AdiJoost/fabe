@@ -1,6 +1,7 @@
 html {
 	background-color: white;
 }
+
 body{
 	margin: 0;
 }
@@ -24,5 +25,30 @@ body{
 	display: inline-block;
 	float: right;
 	padding: 10px;
+	color: #FFF;
 
+}
+
+.header-nav > .container > span > a {
+	color: #FFF;
+}
+
+.header-nav > .container > span > a:link{
+	text-decoration: none;
+	color: #AAA !important;
+}
+
+.header-nav > .container > span > a:hover{
+	text-decoration: none;
+	color: #AAA;
+}
+
+.header-nav > .container > span > a:visted{
+	text-decoration: none;
+	color: #AAA !important;
+}
+
+.header-nav > .container > span > a:active{
+	text-decoration: none;
+	color: #FFF !important;
 }
