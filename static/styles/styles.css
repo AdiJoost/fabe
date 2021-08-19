@@ -26,8 +26,31 @@ body{
 	padding:0 10% 0 10%;
 }
 
+.targetBox{
+}
+
+.targetNumberBox {
+	background-color: #AAA;
+	text-align: left;
+	font-size: 1.5rem;
+	cursor: pointer;
+	padding: 0 10% 0 10%;
+	margin: 0.5em 0.5em 0 0.5em;
+	border: 5px #AAA solid;
+	
+}
+
+.targetExplain {
+	border: 5px #AAA solid;
+	margin: 0 0.5em 0 0.5em;
+}
+
 .introBox > h1 {
 	font-size: 3rem;
+}
+
+.hiden {
+	display: none;
 }
 
 .introBox > p {
