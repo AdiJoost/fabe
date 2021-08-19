@@ -2,6 +2,7 @@ from flask import Flask, render_template, send_from_directory
 from flask_restful import Api
 from flask_jwt import JWT
 from security import authenticate, identity
+from resources.target import Target, Targets
 from db import db
 
 
@@ -24,7 +25,7 @@ def home():
     return render_template("index.html")
 
 @app.route('/targets', methods=['GET'])
-def targets():
+def targets_html():
     return render_template("targets.html")
 
 @app.route('/models', methods=['GET'])
@@ -40,7 +41,8 @@ def impressum():
     return render_template("impressum.html")
 
 
-
+api.add_resource(Target, '/target/<int:_id>')
+api.add_resource(Targets, '/all_targets')
 
 if __name__ == "__main__":
     db.init_app(app)
