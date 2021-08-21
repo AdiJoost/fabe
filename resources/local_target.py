@@ -64,7 +64,9 @@ class Target(Resource):
         return Target.create_response(body, status)
     
     def delete (self, _id):
-        pass
+        target = TargetModel.get_by_id(_id)
+        target.deleteMe()
+        return Target.create_response({"message": "Item with that ID does not exist anymore"}, 200)
     
     def put(self, _id):
         pass
