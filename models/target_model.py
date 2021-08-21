@@ -46,5 +46,9 @@ class TargetModel(db.Model):
         return cls.query.all()
     
     @classmethod
+    def get_by_first_number(cls, first_number):
+        return cls.query.filter_by(first_number=first_number).all()
+    
+    @classmethod
     def get_by_id(cls, _id):
         return cls.query.filter_by(id=_id).first()
