@@ -55,13 +55,19 @@ class Target(Resource):
             
     
     def post(self, _id):
-        return Target.create_response({"message": "There is no Post Method implemented"}, 403)
+        parser = Target.get_post_parser()
+        data = parser.parse_args()
+        target = TargetModel(**data)
+        target.save()
+        status = 201
+        body = {"message" : "Target created"}
+        return Target.create_response(body, status)
     
     def delete (self, _id):
-        return Target.create_response({"message": "There is no Delete Method implemented"}, 403)
+        pass
     
     def put(self, _id):
-        return Target.create_response({"message": "There is no Put Method implemented"}, 403)
+        pass
     
     @classmethod
     def create_response (cls, body, status):
