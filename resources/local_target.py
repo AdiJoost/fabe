@@ -69,7 +69,26 @@ class Target(Resource):
         return Target.create_response({"message": "Item with that ID does not exist anymore"}, 200)
     
     def put(self, _id):
-        pass
+        parser = Target.get_put_parser()
+        data = parser.parse_args()
+        target = TargetModel.get_by_id(_id)
+        if not target:
+            return Target.create_response({"message": "Item with id does not exist. Put method won't create new item. Use Post method instead"})
+        if data["name"] != None:
+            target.name = data["name"]
+        if data["description"]:
+            target.description = data["description"]
+        if data["target_type"]:
+            target.target_type = data["target_type"]
+        if data["first_number"]:
+            target.first_number = data["first_number"]
+        if data["second_number"]:
+            target.second_number = data["second_number"]
+        if data["third_number"]:
+            target.third_number = data["third_number"]
+        target.save()
+        return Target.create_response({"message": "Target updated"}, 200)
+        
     
     @classmethod
     def create_response (cls, body, status):
@@ -105,4 +124,22 @@ class Target(Resource):
                             required=True,
                             help="This field cannot be left blank.")
         
+        return parser
+    
+    @classmethod
+    def get_put_parser(cls):
+        parser = reqparse.RequestParser()
+        parser.add_argument("name",
+                            type=str)
+        parser.add_argument("description",
+                            type=str,
+                            required=True)
+        parser.add_argument("target_type",
+                            type=str)
+        parser.add_argument("first_number",
+                            type=int)
+        parser.add_argument("second_number",
+                            type=int)
+        parser.add_argument("third_number",
+                            type=int)
         return parser
