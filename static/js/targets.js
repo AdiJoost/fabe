@@ -1,17 +1,34 @@
-let testNumber1 = "2.1.5 Kin - ...erläuter den Zusammenhang zwischen coolen Spielsachen und Sozialer Entwicklung";
-let testText1 = "Hier steht eine Erklärung für das Leistungsziel. Dabei ist es ein kleiner Fliesstext, der unten evt auf verschiedene Theorien im Theorieblock verweisen kann. Sharring is carring"
-let testNumber2 = "2.1.6 A - ...zeigt den unterschied zwischen privater und professioneller Beziehung anhand eines Beispieles auf."
-let testText2 = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+let baseUrl = "";
 
 window.addEventListener("load", function(){
-	displayTargets(testNumber1, testText1);
-	displayTargets(testNumber2, testText2);
+	baseUrl = window.location.origin;
+	loadAllTargets();
 }, false)
+
+function loadAllTargets(){
+	let thisBody = null;
+	fetch(baseUrl +"/all_targets")
+	.then(response => response.json())
+	.then(body => gotBody(body));
+}
+
+function gotBody(body){
+	clearBody();
+	for (target in body){
+		item = body[target]
+		displayTargets(item["target_title"] + " " + item["name"], item["description"]);
+	}
+}
+
+function clearBody(){
+	let targetBody = document.getElementById('targetBody');
+	targetBody.innerText = "";
+}
 
 
 
 function displayTargets(target, description){
-	let targetBody = document.body;
+	let targetBody = document.getElementById('targetBody');
 		let targetBox = document.createElement("div");
 		targetBox.classList.add("targetBox");
 			let targetNumber = document.createElement("div");
