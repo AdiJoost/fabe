@@ -58,11 +58,16 @@ body{
 
 #modellBody {
 	text-align: center;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
 }
 
 .modellContainer{
 	height: 15em;
 	width: 15em;
+	min-height: 12em;
+	min-width: 12em;
 	padding: 0.5em;
 	display: inline-block;
 	border: 10px solid #0067ff;
