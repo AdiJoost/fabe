@@ -26,14 +26,16 @@ function clearBody(){
 
 function displayModell(body){
 	let modellBody = document.getElementById('modellBody');
-		let modellContainer = document.createElement("div");
+		let modellContainer = document.createElement("a");
 		modellContainer.classList.add("modellContainer");
+		modellContainer.href = baseUrl + "/model/" + body["id"];
 			let picture = document.createElement("img");
 			picture.src = baseUrl + "/static/pictures/" + body["picture"];
 			picture.classList.add("modellPicture");
 			modellContainer.appendChild(picture);
 
 			let title = document.createElement("h3");
+
 			title.innerText = body["name"];
 			modellContainer.appendChild(title);
 

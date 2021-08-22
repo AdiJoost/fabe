@@ -41,6 +41,10 @@ def contact():
 def impressum():
     return render_template("impressum.html")
 
+@app.route('/model/<string:model_id>')
+def model(model_id):
+    return render_template("model.html", data={"id": model_id})
+
 
 api.add_resource(Target, '/target/<int:_id>')
 api.add_resource(Targets, '/all_targets')
