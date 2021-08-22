@@ -40,10 +40,24 @@ class Theorie(Resource):
         
     
     def delete (self, _id):
-        pass
+        theorie = TheorieModel.get_by_id(_id)
+        theorie.deleteMe()
+        return Theorie.create_response({"message": "Item with that ID does not exist anymore"}, 200)
     
     def put(self, _id):
-        pass
+        parser = Theorie.get_put_parser()
+        data = parser.parse_args()
+        theorie = TheorieModel.get_by_id(_id)
+        if not theorie:
+            return Theorie.create_response({"message": "Item with id does not exist. Put method won't create new item. Use Post method instead"})
+        if data["name"] != None:
+            theorie.name = data["name"]
+        if data["html"]:
+            theorie.html = data["html"]
+        if data["picture"]:
+            theorie.picture = data["picture"]
+        theorie.save()
+        return Theorie.create_response({"message": "Theorie updated"}, 200)
         
     
     @classmethod
@@ -75,8 +89,7 @@ class Theorie(Resource):
         parser.add_argument("name",
                             type=str)
         parser.add_argument("html",
-                            type=str,
-                            required=True)
+                            type=str)
         parser.add_argument("picture",
                             type=str)
         return parser
