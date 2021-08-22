@@ -56,6 +56,30 @@ body{
 	display: none;
 }
 
+#modellBody {
+	text-align: center;
+}
+
+.modellContainer{
+	height: 15em;
+	width: 15em;
+	padding: 0.5em;
+	position: relative;
+	display: inline-block;
+	border: 10px solid #0067ff;
+	text-align: center;
+	font-size: 2rem;
+	margin:3%;
+}
+
+.modellPicture {
+	width: auto;
+	height: auto;
+	max-width: 70%;
+	max-height: 50%;
+	display: box;
+}
+
 .introBox > p {
 	font-size: 2rem;
 }

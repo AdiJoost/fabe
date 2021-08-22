@@ -3,7 +3,7 @@ from flask_restful import Api
 from flask_jwt import JWT
 from security import authenticate, identity
 from resources.local_target import Target, Targets
-from resources.local_theorie import Theorie
+from resources.local_theorie import Theorie, Theories
 from db import db
 
 
@@ -45,6 +45,7 @@ def impressum():
 api.add_resource(Target, '/target/<int:_id>')
 api.add_resource(Targets, '/all_targets')
 api.add_resource(Theorie, '/theorie/<int:_id>')
+api.add_resource(Theories, '/theories')
 
 
 if __name__ == "__main__":

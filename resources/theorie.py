@@ -32,18 +32,13 @@ class Theorie(Resource):
             
     
     def post(self, _id):
-        parser = Theorie.get_post_parser()
-        data = parser.parse_args()
-        theorie = TheorieModel(**data)
-        theorie.save()
-        return Theorie.create_response({"message": "Theorie created"}, 201)
-        
+        return Theorie.create_response({"message": "There is no Post Method implemented"}, 403)
     
     def delete (self, _id):
-        pass
+        return Theorie.create_response({"message": "There is no Delete Method implemented"}, 403)
     
     def put(self, _id):
-        pass
+        return Theorie.create_response({"message": "There is no Put Method implemented"}, 403)
         
     
     @classmethod

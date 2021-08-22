@@ -30,7 +30,7 @@ class TheorieModel(db.Model):
         
         
     @classmethod
-    def get_all_targets(cls):
+    def get_all(cls):
         return cls.query.all()
     
     
