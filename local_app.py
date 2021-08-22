@@ -47,7 +47,7 @@ def model(html):
     if os.path.isfile("templates/" + html):
         return render_template(html)
     else:
-        return {"message": "Site does not exist"}, 404
+        return render_template("404.html")
 
 
 
