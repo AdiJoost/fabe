@@ -47,7 +47,7 @@ def model(html):
     if os.path.isfile("templates/" + html):
         return render_template(html)
     else:
-        return render_template("404.html")
+        return render_template(html)
 
 
 api.add_resource(Target, '/target/<int:_id>')
