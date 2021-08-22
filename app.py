@@ -5,6 +5,7 @@ from security import authenticate, identity
 from resources.target import Target, Targets
 from resources.theorie import Theorie, Theories
 from db import db
+import os.path
 
 
 app = Flask(__name__)
@@ -40,6 +41,13 @@ def contact():
 @app.route('/impressum', methods=['GET'])
 def impressum():
     return render_template("impressum.html")
+
+@app.route('/model/<string:html>')
+def model(html):
+    if os.path.isfile("templates/" + html):
+        return render_template(html)
+    else:
+        return render_template("404.html")
 
 
 api.add_resource(Target, '/target/<int:_id>')
