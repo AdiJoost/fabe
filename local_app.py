@@ -5,6 +5,7 @@ from security import authenticate, identity
 from resources.local_target import Target, Targets
 from resources.local_theorie import Theorie, Theories
 from db import db
+import os.path
 
 
 app = Flask(__name__)
@@ -41,9 +42,13 @@ def contact():
 def impressum():
     return render_template("impressum.html")
 
-@app.route('/model/<string:model_id>')
-def model(model_id):
-    return render_template("model.html", data={"id": model_id})
+@app.route('/model/<string:html>')
+def model(html):
+    if os.path.isfile("templates/" + html):
+        return render_template(html)
+    else:
+        return {"message": "Site does not exist"}, 404
+
 
 
 api.add_resource(Target, '/target/<int:_id>')

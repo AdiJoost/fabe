@@ -84,6 +84,27 @@ body{
 	display: box;
 }
 
+#theorieDisplay{
+	margin: 0 3% 0 3%;
+	font-size: 2rem;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#theorieDisplay > h1 {
+	text-align: center;
+}
+
+#theorieDisplay > h2 {
+	text-align: center;
+}
+#theorieDisplay > img {
+	
+}
+
 .introBox > p {
 	font-size: 2rem;
 }

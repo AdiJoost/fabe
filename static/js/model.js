@@ -13,6 +13,7 @@ function getHTML(){
 }
 
 function gotBody(body){
-	let container = document.getElementById('modellBody');
+	let container = document.getElementById('theorieDisplay');
+	console.log(body);
 	container.innerHTML = body["html"];
 }

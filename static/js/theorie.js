@@ -28,7 +28,7 @@ function displayModell(body){
 	let modellBody = document.getElementById('modellBody');
 		let modellContainer = document.createElement("a");
 		modellContainer.classList.add("modellContainer");
-		modellContainer.href = baseUrl + "/model/" + body["id"];
+		modellContainer.href = baseUrl + "/model/" + body["html"];
 			let picture = document.createElement("img");
 			picture.src = baseUrl + "/static/pictures/" + body["picture"];
 			picture.classList.add("modellPicture");
