@@ -48,6 +48,27 @@ body{
 	margin: 0 0.5em 0 0.5em;
 }
 
+.boxmenu{
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.clickableBox {
+	cursor: pointer;
+	width:3em;
+	height: 3em;
+	margin: 1em;
+	border: 0.4em solid #FF9800;
+	background-color: #FF9800;
+	border-radius: 0.2em;
+}
+
+.cklicked {
+	background-color: #cc7a00;
+	border: 0.4em solid #cc7a00; 
+}
+
 .introBox > h1 {
 	font-size: 3rem;
 }
