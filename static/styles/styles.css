@@ -56,12 +56,16 @@ body{
 
 .clickableBox {
 	cursor: pointer;
-	width:3em;
-	height: 3em;
+	width:2em;
+	height: 2em;
 	margin: 1em;
 	border: 0.4em solid #FF9800;
 	background-color: #FF9800;
 	border-radius: 0.2em;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 2em;
+	font-size: 2rem;
 }
 
 .cklicked {
