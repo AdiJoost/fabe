@@ -71,7 +71,6 @@ function toggleButton(button, index){
 	buttons[index] = !buttons[index];
 	clearBody();
 	getTargets();
-	console.log(buttons);
 }
 
 function getTargets(){
