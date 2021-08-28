@@ -1,6 +1,6 @@
 let baseUrl = "";
 let buttons = [false, false, false, false, false, false, false];
-let buttonsLength = 7;
+
 
 window.addEventListener("load", function(){
 	baseUrl = window.location.origin;
@@ -58,7 +58,7 @@ function displayTargets(target, description){
 }
 
 function setupButtons(){
-	for (let i = 0; i < buttonsLength; i++){
+	for (let i = 0; i < buttons.length; i++){
 		let button = document.getElementById('cb' + i);
 		button.addEventListener("click", function(){
 			toggleButton(button, i);
@@ -89,7 +89,7 @@ function getTargets(){
 
 function getStates(){
 	return_value = "";
-	for (let i = 0; i < buttonsLength; i++){
+	for (let i = 0; i < buttons.length; i++){
 		if (buttons[i] == true){
 			return_value += "1";
 		} else {
