@@ -42,7 +42,7 @@ body{
 
 .inputField {
 	font-size: 2rem;
-	border: 2rem solid #0067ff;
+	
 }
 
 .inputForm > textarea {
@@ -60,6 +60,7 @@ body{
 	font-size: 3rem;
 	color: #FFF;
 	vertical-align: center;
+	border-radius: 2rem;
 }
 
 .targetBox{
