@@ -5,10 +5,10 @@ from utils.MailBot import sendMail
 
 
 class Mail(Resource):
-    def post():
+    def post(self):
         parser = Mail.get_parser()
         data = parser.parse_args()
-        mail_message = "From: " + data["name"] + "\nMail: " + data["email"] + "\nMessage:\n" + data["text"]
+        mail_message = "From: " + data["name"] + "\nMail: " + data["email"] + "\nMessage:\n\n" + data["text"]
         try:
             sendMail(reciver="adis.coole.firma@gmail.com", text=mail_message, subject=data["subject"])
             return Mail.create_response({"message": "Deine Nachricht wurde gesendet."}, 200)
