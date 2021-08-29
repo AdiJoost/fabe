@@ -14,7 +14,7 @@ class Mail(Resource):
             return Mail.create_response({"message": "Deine Nachricht wurde gesendet."}, 200)
         except Exception as e:
             with open("/var/www/log/error.txt", "a", encoding="utf-8") as file:
-                file.writelines(e.message + "\n\n")
+                file.writelines(str(e) + "\n\n")
             return Mail.create_response({"message": "Oopps, die Nachricht konnte nicht übermittelt werden. Probiere es später oder schreibe eine E-Mail an adis.coole.firma@gmail.com"}, 500)
         
         
