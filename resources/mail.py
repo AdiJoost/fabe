@@ -10,13 +10,11 @@ class Mail(Resource):
         data = parser.parse_args()
         mail_message = "From: " + data["name"] + "\nMail: " + data["email"] + "\nMessage:\n\n" + data["text"]
         try:
-            with open("error.txt", "a", encoding="utf-8") as file:
-                file.writelines("e.message")
             sendMail(reciver="adis.coole.firma@gmail.com", text=mail_message, subject=data["subject"])
             return Mail.create_response({"message": "Deine Nachricht wurde gesendet."}, 200)
         except Exception as e:
-            with open("/var/www/fabe/error.txt", "a", encoding="utf-8") as file:
-                file.writelines("e.message")
+            with open("/var/www/log/error.txt", "a", encoding="utf-8") as file:
+                file.writelines(e.message + "\n\n")
             return Mail.create_response({"message": "Oopps, die Nachricht konnte nicht übermittelt werden. Probiere es später oder schreibe eine E-Mail an adis.coole.firma@gmail.com"}, 500)
         
         
