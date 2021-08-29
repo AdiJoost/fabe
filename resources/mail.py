@@ -13,8 +13,8 @@ class Mail(Resource):
             sendMail(reciver="adis.coole.firma@gmail.com", text=mail_message, subject=data["subject"])
             return Mail.create_response({"message": "Deine Nachricht wurde gesendet."}, 200)
         except Exception as e:
-            with open ("error.txt", "w") as file:
-                file.write(e.message)
+            with open ("error.txt", "w+") as file:
+                file.write("e.message")
             return Mail.create_response({"message": "Oopps, die Nachricht konnte nicht übermittelt werden. Probiere es später oder schreibe eine E-Mail an adis.coole.firma@gmail.com"}, 500)
         
         
