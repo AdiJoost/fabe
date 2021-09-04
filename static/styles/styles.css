@@ -26,6 +26,18 @@ body{
 	padding:0 10% 0 10%;
 }
 
+.aboutMeText > h2 {
+	font-size: 2.5rem;
+}
+
+.aboutMeText > p {
+	font-size: 2rem;
+}
+
+.aboutMeBox{
+	display: flex;
+}
+
 .inputForm {
 	position: relative;
 	text-align: center;
