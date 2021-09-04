@@ -20,6 +20,11 @@ body{
 .header-nav > .conatiner {
 }
 
+.navigation > a {
+	display: block;
+	margin-top: 2rem;
+}
+
 .introBox {
 	position: relative;
 	text-align: center;
