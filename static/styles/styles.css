@@ -32,10 +32,23 @@ body{
 
 .aboutMeText > p {
 	font-size: 2rem;
+	flex-shrink: 3;
+	display: inline-block;
+	max-width: 50em;
 }
 
 .aboutMeBox{
 	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+
+.aboutMeBox > img {
+	width: auto;
+	max-width: 400px;
+	max-height: 50em;
+	display: inline-block;
 }
 
 .inputForm {
