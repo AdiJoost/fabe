@@ -197,6 +197,20 @@ body{
 	
 }
 
+.definition {
+	border: #000 solid 0.2em;
+	padding: 1.5em;
+
+}
+
+.quelle {
+	float: right;
+	padding-top: : 0.2em;
+	font-size: 0.8em;
+	text-decoration: none;
+	color: #000;
+}
+
 .introBox > p {
 	font-size: 2rem;
 }
