@@ -240,6 +240,7 @@ body{
 .notification > a {
 	color: #FFF;
 	text-decoration: underline;
+	display: block;
 }
 
 .header-nav > .container > span > a {
