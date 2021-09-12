@@ -6,6 +6,12 @@ body{
 	margin: 0;
 }
 
+hr {
+	color: #0067ff;
+	width: 90%;
+	border: 1rem solid #0067ff;
+}
+
 .header-nav {
 	width: auto;
 	height: auto;
@@ -171,7 +177,7 @@ body{
 .modellPicture {
 	width: auto;
 	height: auto;
-	max-width: 70%;
+	max-width: 90%;
 	max-height: 50%;
 	display: box;
 }
