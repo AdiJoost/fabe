@@ -1,5 +1,3 @@
-let baseUrl = "";
-
 class NavigationItem {
 	constructor(name, tail){
 		this.name = name;
@@ -13,7 +11,6 @@ class NavigationItem {
 }
 
 window.addEventListener("load", function(){
-	baseUrl = window.location.origin;
 	setupHeadNav();
 }, false)
 
