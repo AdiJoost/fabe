@@ -24,7 +24,12 @@ function setupHeadNav(){
 
 	let container = document.getElementById('headNavContainer');
 	for (let item in navItems){
-		console.log(navItems[item].toString());
+		let mySpan = document.createElement("span");
+			let myA = document.createElement("a");
+			myA.href = navItems[item].tail;
+			myA.innerText= navItems[item].name;
+			mySpan.appendChild(myA);
+		container.appendChild(mySpan);
 	}
 
 }
