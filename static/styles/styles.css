@@ -21,9 +21,11 @@ hr {
 	text-align: center;
 	font-size: 3rem;
 
+
 }
 
-.header-nav > .conatiner {
+.header-nav > .container > span{
+	display:inline-block;
 }
 
 .navigation > a {
@@ -221,7 +223,7 @@ hr {
 	font-size: 2rem;
 }
 
-
+/*
 .header-nav > span {
 	display: inline-block;
 	float: right;
@@ -229,11 +231,12 @@ hr {
 	color: #FFF;
 
 
-}
+}*/
 
 .header-nav > .container > span {
 	margin-right: 1em;
 	margin-left: 1em;
+
 }
 
 .notification {
