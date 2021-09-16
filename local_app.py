@@ -42,6 +42,10 @@ def contact():
 def impressum():
     return render_template("impressum.html")
 
+@app.route('/resumes', methods=['GET'])
+def resumes():
+    return render_template("resumes.html")
+
 @app.route('/model/<string:html>')
 def model(html):
     if os.path.isfile("templates/" + html):
