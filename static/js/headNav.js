@@ -17,11 +17,11 @@ window.addEventListener("load", function(){
 function setupHeadNav(){
 	let navItems = [
 				new NavigationItem("Startseite", "/"),
-				new NavigationItem("Leistungsziele", "/targets"),
+				new NavigationItem("Zusammenfassungen", "/resumes"),
 				new NavigationItem("Modelle", "/models"),
 				new NavigationItem("Kontakt", "/contact"),
 				new NavigationItem("Impressum", "/impressum"),
-				new NavigationItem("Zusammenfassungen", "/resumes"),]
+				]
 
 	let container = document.getElementById('headNavContainer');
 	for (let item in navItems){

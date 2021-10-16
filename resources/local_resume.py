@@ -1,10 +1,9 @@
 from flask_restful import Resource, reqparse
-from flask_jwt import jwt_required
 from models.resume_model import ResumeModel
 from flask import make_response
 import flask
 
-class Resumes(Resource):
+class _Resumes(Resource):
     def get(self):
         resumes = ResumeModel.get_all()
         return_value = {}
@@ -13,6 +12,12 @@ class Resumes(Resource):
         return Resume.create_response(return_value, 200)
     
     def post(self):
+        pass
+    
+    def delete(self):
+        pass
+    
+    def put(self):
         pass
             
         
@@ -26,7 +31,7 @@ class Resume(Resource):
             body = resume.to_json()
             status = 200
         else:
-            body = {"message": "No theorie with given id found"}
+            body = {"message": "No resume with given id found"}
             status = 404
         return Resume.create_response(body, status)
             
