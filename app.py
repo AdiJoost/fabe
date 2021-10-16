@@ -1,9 +1,8 @@
-from flask import Flask, render_template, send_from_directory
+from flask import Flask, render_template
 from flask_restful import Api
-from flask_jwt import JWT
-from security import authenticate, identity
 from resources.target import Target, Targets
 from resources.theorie import Theorie, Theories
+from resources.resume import Resume, _Resumes
 from resources.mail import Mail
 from db import db
 import os.path
@@ -15,7 +14,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key = "LolHAHAHA"
 api = Api(app)
 
-jwt = JWT(app, authenticate, identity)
+
 
 
 @app.before_first_request
@@ -34,6 +33,10 @@ def targets_html():
 @app.route('/models', methods=['GET'])
 def models():
     return render_template("models.html")
+
+@app.route('/resumes', methods=['GET'])
+def resumes():
+    return render_template("resumes.html")
 
 @app.route('/contact', methods=['GET'])
 def contact():
@@ -55,7 +58,8 @@ api.add_resource(Target, '/target/<int:_id>')
 api.add_resource(Targets, '/all_targets')
 api.add_resource(Theorie, '/theorie/<int:_id>')
 api.add_resource(Theories, '/theories')
-api.add_resource(Mail, '/sendMail')
+api.add_resource(Resume, '/resume/<int:_id>')
+api.add_resource(_Resumes, '/getResumes')
 
 if __name__ == "__main__":
     db.init_app(app)
