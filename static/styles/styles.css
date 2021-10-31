@@ -32,6 +32,10 @@ hr {
 	display:inline-block;
 }
 
+.navigation {
+	min-width: 60%;
+}
+
 .navigation > a {
 	display: block;
 	margin-top: 2rem;
